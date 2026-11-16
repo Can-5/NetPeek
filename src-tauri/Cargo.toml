@@ -1,0 +1,20 @@
+[package]
+name = "netpeek"
+version = "0.1.0"
+edition = "2021"
+description = "Network diagnostics: IP, ping, DNS, latency history and speed test"
+license = "MIT"
+
+[lib]
+name = "netpeek_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+ureq = { version = "2", default-features = false, features = ["tls"] }
+if-addrs = "0.12"
